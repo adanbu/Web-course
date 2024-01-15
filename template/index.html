@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTW App Template</title>
+    <!--
+        The tailwind CDN is designed for development purposes only, and is not the best choice for production.
+        Read more here: https://tailwindcss.com/docs/installation 
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- example for dark theme styling when using tailwind cdn -->
+    <style>
+        
+           
+
+        .calculator {
+            border: 2px solid #979797;
+            width: 160px auto;
+            text-align: center;
+            margin: 20px auto;
+            background-color: purple;
+        }
+
+        /*add your custom css rules here*/
+        .but{
+            float: left; width:40px;
+            vertical-align: middle;
+            background-color: rgb(51, 74, 81);border-radius: 5px;
+            margin:5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            cursor:pointer;
+            color:white;
+            text-align: center;
+
+        }
+
+        .but:hover {
+        background-color: #747679;
+      }
+
+
+    </style>
+</head>
+
+<body class="dark:text-white light:text-black">
+
+    <!-- your app code goes here -->
+
+    <div class="calculator">
+        <div id="display" style="padding: 10px; background-color: rgb(179, 2, 179); color:white;">0</div>
+     
+        <div>
+            <div class="but">7</div>
+            <div class="but">8</div>
+            <div class="but">9</div>
+            <div class="but">C</div>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <div class="but">4</div>
+            <div class="but">5</div>
+            <div class="but">6</div>
+            <div class="but">x</div>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <div class="but">1</div>
+            <div class="but">2</div>
+            <div class="but">3</div>
+            <div class="but">÷</div>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <div class="but">0</div>
+            <div class="but">+</div>    
+            <div class="but">-</div>
+            <div style="clear:both"></div>
+        </div>
+    </div> 
+
+    <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
+    <script>
+        // custom config for the MTW app 
+        const mtwAppConfig = {
+            border: true // app border in the MTW page                    
+        }
+
+        ///////////////////////////////////////////////////////
+        // implement this functions in order to use private API        
+        const sendPrivateApiRequest = async () => {
+            // your code here:
+            // sendRequestToParent({ cat: 'getAssets' })
+        }        
+
+        const acceptPrivateApiResponse = async (data) => {
+            // process received data here:
+            // console.log(data)
+        }
+
+        // use this in order to send on document load
+        document.addEventListener('DOMContentLoaded', () => {
+            // your code here:
+            //sendRequestToParent({ method: 'getAssets' })
+        })
+
+    </script>
+    <script src="https://morethanwallet.com/appstore/index.js"></script>
+</body>
+
+</html>
