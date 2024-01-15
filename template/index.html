@@ -12,24 +12,71 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- example for dark theme styling when using tailwind cdn -->
     <style>
-        /*examples for dark/light themes*/
-        .dark .dark\:text-white {
-            color: #fff;
-        }
-        .dark .dark\:bg-gray-800 {
-            background-color: #1f2937;
-        }
-        .light .light\:text-black {
-            color: #000;
+        
+           
+
+        .calculator {
+            border: 2px solid #979797;
+            width: 160px;
+            text-align: center;
+            margin: 20px auto;
+            background-color: purple;
         }
 
         /*add your custom css rules here*/
+        .but{
+            float: left; width:40px;
+            vertical-align: middle;
+            background-color: rgb(51, 74, 81);border-radius: 5px;
+            margin:5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            cursor:pointer;
+            color:white;
+            text-align: center;
+
+        }
+
+        .but:hover {
+        background-color: #747679;
+      }
+
+
     </style>
 </head>
 
 <body class="dark:text-white light:text-black">
 
     <!-- your app code goes here -->
+
+    <div class="calculator">
+        <div id="display" style="padding: 10px; background-color: rgb(179, 2, 179); color:white;">0</div>
+     
+        <div>
+            <div class="but">7</div>
+            <div class="but">8</div>
+            <div class="but">9</div>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <div class="but">4</div>
+            <div class="but">5</div>
+            <div class="but">6</div>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <div class="but">1</div>
+            <div class="but">2</div>
+            <div class="but">3</div>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <div class="but">0</div>
+            <div class="but">+</div>    
+            <div class="but">-</div>
+            <div style="clear:both"></div>
+        </div>
+    </div> 
 
     <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
     <script>
