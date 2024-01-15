@@ -14,13 +14,14 @@
     <style>
         
            
-
+      
         .calculator {
+        
             border: 2px solid #979797;
-            width: 160px;
+            width: 205px;
             text-align: center;
             margin: 20px auto;
-            background-color: purple;
+            background-color: rgb(197, 197, 197);
         }
 
         /*add your custom css rules here*/
@@ -48,36 +49,40 @@
 <body class="dark:text-white light:text-black">
 
     <!-- your app code goes here -->
-
-    <div class="calculator">
-        <div id="display" style="padding: 10px; background-color: rgb(179, 2, 179); color:white;">0</div>
-     
-        <div>
-            <div class="but">7</div>
-            <div class="but">8</div>
-            <div class="but">9</div>
-            <div style="clear:both"></div>
-        </div>
-        <div>
-            <div class="but">4</div>
-            <div class="but">5</div>
-            <div class="but">6</div>
-            <div style="clear:both"></div>
-        </div>
-        <div>
-            <div class="but">1</div>
-            <div class="but">2</div>
-            <div class="but">3</div>
-            <div style="clear:both"></div>
-        </div>
-        <div>
-            <div class="but">0</div>
-            <div class="but">+</div>    
-            <div class="but">-</div>
-            <div style="clear:both"></div>
-        </div>
+    
+    <div class="calculator" style="margin: 20px auto;">
+        <div id="display" style="padding: 10px; background-color: rgb(202, 202, 202); color:black;text-align: right">0</div>
+        
+            <div>
+                <div class="but">7</div>
+                <div class="but">8</div>
+                <div class="but">9</div>
+                <div class="but">C</div>
+                <div style="clear:both"></div>
+            </div>
+            <div>
+                <div class="but">4</div>
+                <div class="but">5</div>
+                <div class="but">6</div>
+                <div class="but">x</div>
+                <div style="clear:both"></div>
+            </div>
+            <div>
+                <div class="but">1</div>
+                <div class="but">2</div>
+                <div class="but">3</div>
+                <div class="but">÷</div>
+                <div style="clear:both"></div>
+            </div>
+            <div>
+                <div class="but">0</div>
+                <div class="but">+</div>    
+                <div class="but">-</div>
+                <div class="but">=</div>
+                <div style="clear:both"></div>
+            </div>
     </div> 
-
+   
     <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
     <script>
         // custom config for the MTW app 
