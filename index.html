@@ -9,16 +9,13 @@
         The tailwind CDN is designed for development purposes only, and is not the best choice for production.
         Read more here: https://tailwindcss.com/docs/installation 
     -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- example for dark theme styling when using tailwind cdn -->
+
     <style>
-        
            
-      
         .calculator {
         
             border: 2px solid #979797;
-            width: 205px;
+            width: 250px;
             text-align: center;
             margin: 20px auto;
             background-color: rgb(197, 197, 197);
@@ -42,45 +39,107 @@
         background-color: #747679;
       }
 
+      .numbut{
+            float: left; width:40px;
+            vertical-align: middle;
+            background-color: rgb(87, 122, 133);border-radius: 5px;
+            margin:5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            cursor:pointer;
+            color:white;
+            text-align: center;
+
+        }
+
+        .numbut:hover {
+        background-color: rgb(126, 173, 187);
+      }
+
 
     </style>
 </head>
 
+
+
 <body class="dark:text-white light:text-black">
+    <script src="indexJS.js"> </script>
 
     <!-- your app code goes here -->
     
     <div class="calculator" style="margin: 20px auto;">
         <div id="display" style="padding: 10px; background-color: rgb(202, 202, 202); color:black;text-align: right">0</div>
         
-            <div>
-                <div class="but">7</div>
-                <div class="but">8</div>
-                <div class="but">9</div>
-                <div class="but">C</div>
-                <div style="clear:both"></div>
+        <div>
+            <button class="but" id="mc" onclick="memoryClear()">MC</button>
+            <button class="but" id="mr" onclick="memoryRecall()">MR</button>
+            <button class="but" id="mplus" onclick="memoryAdd()">M+</button>
+            <button class="but" id="mminus" onclick="memorySubtract()">M-</button>
+            <button class="but" id="ms" onclick="memoryStore()">MS</button>
+            <!--
+            <div class="but">
+                <select id="md" onchange="selectMemoryDropdown()">
+                    <option value="memory1"></option>
+                    <option value="memory2"></option>
+                  
+                </select>
             </div>
-            <div>
-                <div class="but">4</div>
-                <div class="but">5</div>
-                <div class="but">6</div>
-                <div class="but">x</div>
-                <div style="clear:both"></div>
-            </div>
-            <div>
-                <div class="but">1</div>
-                <div class="but">2</div>
-                <div class="but">3</div>
-                <div class="but">÷</div>
-                <div style="clear:both"></div>
-            </div>
-            <div>
-                <div class="but">0</div>
-                <div class="but">+</div>    
-                <div class="but">-</div>
-                <div class="but">=</div>
-                <div style="clear:both"></div>
-            </div>
+            -->
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <button class="but" onclick="raiseToPower(2)">2^x</button>
+            <button class="but" onclick="appendValue('3.1415')">π</button>
+            <button class="but" onclick="appendValue('2.71828')">e</button>
+            <button class="but" onclick="clearDisplay()">C</button>
+            <button class="but" onclick="backspace()">←</button>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <button class="but" onclick="raiseToPower(2)">x^2</button>
+            <button class="but" onclick="reciprocal()">1/x</button>
+            <button class="but" onclick="applyOperation('exp')">e^x</button>
+            <button class="but" onclick="applyOperation('mod')">mod</button>
+            <button class="but" onclick="applyOperation('abs')">|x|</button>
+            <div style="clear:both"></div>
+        </div>
+
+        <div>
+            <button class="but" onclick="applyOperation('sqrt')">√</button>
+            <button class="but" onclick="appendValue('&rpar;')">'&rpar;'</button>
+            <button class="but" onclick="appendValue('&lpar;')">'&lpar;'</button>
+            <button class="but" onclick="appendValue('/')">÷</button>
+            <button class="but" onclick="factorial()">n!</button>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <button class="numbut" onclick="appendValue('7')">7</button>
+            <button class="numbut" onclick="appendValue('8')">8</button>
+            <button class="numbut" onclick="appendValue('9')">9</button>
+            <button class="but" onclick="clearDisplay()">C</button>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <button class="numbut" onclick="appendValue('4')">4</button>
+            <button class="numbut" onclick="appendValue('5')">5</button>
+            <button class="numbut" onclick="appendValue('6')">6</button>
+            <button class="but" onclick="appendValue('*')">x</button>
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <button class="numbut" onclick="appendValue('1')">1</button>
+            <button class="numbut" onclick="appendValue('2')">2</button>
+            <button class="numbut" onclick="appendValue('3')">3</button>
+            <button class="but" onclick="appendValue('+')">+</button>
+           
+            <div style="clear:both"></div>
+        </div>
+        <div>
+            <button class="numbut" onclick="appendValue('0')">0</button>
+            <button class="but"  onclick="calculateResult()">=</button>
+            <button class="but" onclick="appendValue('-')">-</button>
+            <div style="clear:both"></div>
+        </div>
     </div> 
    
     <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
